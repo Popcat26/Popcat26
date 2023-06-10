@@ -1,1 +1,9 @@
-print("ForceHub is loaded")
+print("ForceHub is injected!")
+local Vide = Instance.new("Part", workspace.Arena["main island"])
+Vide.Name = "VideOff"
+Vide.Anchored = true
+Vide.Size = Vector3.new(2048, 1, 2048)
+Vide.Position + Vector3.new(0, -7, 0)
+print("Loaded!")
+wait(30)
+print("New update the 20 July!")
