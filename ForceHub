@@ -1,3 +1,5 @@
+--ForceHub for Slap Battle
+
 print("ForceHub is injected!")
 local Vide = Instance.new("Part", workspace.Arena["main island"])
 Vide.Name = "VideOff"
