@@ -1,1 +1,9 @@
-
+local Loading = Instance.new("Message", workspace)
+Loading.Text = "Loading"
+wait(8)
+local AV = Instance.new("Part", workspace.Arena["main island"])
+AV.Anchored = true
+AV.Position = Vector3.new(0, -9, 0)
+AV.Size = Vector3.new(2048, 1, 2048)
+AV.Transparency = 0.5
+Loading.Text = "Success!"
