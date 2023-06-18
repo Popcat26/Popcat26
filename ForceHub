@@ -4,6 +4,18 @@ wait(8)
 local AV = Instance.new("Part", workspace.Arena["main island"])
 AV.Anchored = true
 AV.Position = Vector3.new(0, -9, 0)
-AV.Size = Vector3.new(2048, 1, 2048)
+AV.Size = Vector3.new(2048, -2048, 2048)
 AV.Transparency = 0.5
 Loading.Text = "Success!"
+wait(8)
+Loading:Destroy()
+while true do
+local PLR = game:GetService("Players").LocalPlayer
+local GloveAura = game.Workspace.PLR.Default.Glove.Size = Vector3.new(30, 30, 30)
+local Speed = game.Workspace.PLR.Humanoid.WalkSpeed = 50
+local AutoEquip = game.Workspace.PLR.Default.Equipped = true
+end
+local EndMessage = Instance.new("Message", workspace)
+EndMessage.Text = "Completed with success!"
+wait(8)
+EndMessage:Destroy()
