@@ -10,9 +10,9 @@ Loading.Text = "Success!"
 wait(8)
 Loading:Destroy()
 while true do
-local PLR = game:GetService("Players").LocalPlayer
-local GloveAura = game.Workspace.PLR.Default.Glove.Size = Vector3.new(30, 30, 30)
-local Speed = game.Workspace.PLR.Humanoid.WalkSpeed = 50
+local PLR = game:GetService("Players")
+local GloveAura = game.Workspace.PLR.UserId.Default.Glove.Size = Vector3.new(30, 30, 30)
+local Speed = game.Workspace.PLR.UserId.Humanoid.WalkSpeed = 50
 local AutoEquip = game.Workspace.PLR.Default.Equipped = true
 end
 local EndMessage = Instance.new("Message", workspace)
