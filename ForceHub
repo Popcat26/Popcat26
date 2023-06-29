@@ -1,21 +1,22 @@
-local Loading = Instance.new("Message", workspace)
-Loading.Text = "Loading"
-wait(8)
-local AV = Instance.new("Part", workspace.Arena["main island"])
-AV.Anchored = true
-AV.Position = Vector3.new(0, -9, 0)
-AV.Size = Vector3.new(2048, -2048, 2048)
-AV.Transparency = 0.5
-Loading.Text = "Success!"
-wait(8)
-Loading:Destroy()
-while true do
-local PLR = game:GetService("Players")
-local GloveAura = game.Workspace.PLR.UserId.Default.Glove.Size = Vector3.new(30, 30, 30)
-local Speed = game.Workspace.PLR.UserId.Humanoid.WalkSpeed = 50
-local AutoEquip = game.Workspace.PLR.Default.Equipped = true
-end
-local EndMessage = Instance.new("Message", workspace)
-EndMessage.Text = "Completed with success!"
-wait(8)
-EndMessage:Destroy()
+local A = Instance.new("Message", workspace)
+A.Text = "ForceHubX : Loading..."
+wait(5)
+local B = Instance.new("Part", workspace.Arena["main island"])
+B.Anchored = true
+B.Position = Vector3.new(0,-8.5,0)
+B.Size = Vector3.new(2048,1,2048)
+B.Transparency = 0.5
+B.Touched:Connect(function(hit)
+    if hit.Parent:FindFirstChild("Humanoid") then
+        hit.Parent.Humanoid.WalkSpeed = 70
+    end
+end)
+local AntiCorde = Instance.new("Part", workspace.Arena["main island"])
+AntiCorde.Anchored = true
+AntiCorde.Position = Vector3.new(0,-45,0)
+AntiCorde.Size = Vector3.new(2048,1,2048)
+A.Text = "Anti Leash : Activated"
+wait(5)
+A.Text = "ForceHubX : Loaded"
+wait(5)
+A:Destroy()
