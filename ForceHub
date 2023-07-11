@@ -6,17 +6,9 @@ B.Anchored = true
 B.Position = Vector3.new(0,-8.5,0)
 B.Size = Vector3.new(2048,1,2048)
 B.Transparency = 0.5
-B.Touched:Connect(function(hit)
-    if hit.Parent:FindFirstChild("Humanoid") then
-        hit.Parent.Humanoid.WalkSpeed = 70
-    end
+B.Touched:Connect(function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
 end)
-local AntiCorde = Instance.new("Part", workspace.Arena["main island"])
-AntiCorde.Anchored = true
-AntiCorde.Position = Vector3.new(0,-45,0)
-AntiCorde.Size = Vector3.new(2048,1,2048)
-A.Text = "Anti Leash : Activated"
-wait(5)
 A.Text = "ForceHubX : Loaded"
 wait(5)
 A:Destroy()
