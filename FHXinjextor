@@ -1,7 +1,1 @@
 local RS = game:GetService("ReplicatedStorage")
-local RE = Instance.new("RemoteEvent", RS)
-RE.Name = "FHX"
-RE.OnServerEvent:Connect(function()
-    print("test")
-end)
-RS.FHX:FireServer()
