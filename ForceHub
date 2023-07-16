@@ -1,5 +1,5 @@
 local A = Instance.new("Message", workspace)
-A.Text = "ForceHubX : Loading..."
+A.Text = "ForceHubX - Slap Battles : 🔴"
 wait(5)
 local B = Instance.new("Part", workspace.Arena["main island"])
 B.Anchored = true
@@ -11,6 +11,6 @@ B.Touched:Connect(function()
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
     end
 end)
-A.Text = "ForceHubX : Loaded"
+A.Text = "ForceHubX - Slap Battles : 🟢"
 wait(5)
 A:Destroy()
