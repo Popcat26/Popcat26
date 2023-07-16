@@ -7,11 +7,10 @@ B.Position = Vector3.new(0,-8.5,0)
 B.Size = Vector3.new(2048,1,2048)
 B.Transparency = 0.5
 B.Touched:Connect(function()
-    local PlayerSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
+    while wait() do
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
+    end
 end)
 A.Text = "ForceHubX : Loaded"
 wait(5)
 A:Destroy()
-while wait() do
-PlayerSpeed
-end
