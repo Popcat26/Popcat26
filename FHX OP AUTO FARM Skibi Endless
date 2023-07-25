@@ -1,0 +1,25 @@
+while wait() do
+    local args = {
+    [1] = "DamToMonster",
+    [2] = workspace:WaitForChild("ForScript"):WaitForChild("Monster_"):WaitForChild("M0"),
+    [3] = {
+        ["damtype"] = "normal"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CurRemotes"):WaitForChild("MonsterEvent"):FireServer(unpack(args))
+local args = {
+    [1] = "ClickPoints",
+    [2] = {
+        ["Obj"] = "GHealth",
+        ["Points"] = 1
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CurRemotes"):WaitForChild("DataChange_Points"):FireServer(unpack(args))
+local args = {
+    [1] = "rebirth"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CurRemotes"):WaitForChild("DataChange_Rebirth"):FireServer(unpack(args))
+end
