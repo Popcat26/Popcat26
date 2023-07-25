@@ -1,37 +1,81 @@
-local PLR2 = game.Players.LocalPlayer
-local PLR = game.Players.LocalPlayer.Name
-game.Players.LocalPlayer.PlayerAdded:Connect(function(player)
-    error(player.Name .. "has joined the game")
-end)
-local A = Instance.new("Message", workspace)
-A.Text = "ForceHubX - Slap Battles : 🔴"
-wait(5)
-local B = Instance.new("Part", workspace.Arena["main island"])
-B.Anchored = true
-B.Position = Vector3.new(0,-8.5,0)
-B.Size = Vector3.new(2048,1,2048)
-B.Transparency = 0.5
-B.Touched:Connect(function()
-    while wait() do
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
-    end
-end)
-B.Touched:Connect(function()
-    while wait() do
-        local args = {
-            [1] = game:GetService("Players"):WaitForChild(PLR).Character:FindFirstChild("Right Arm")
-        }
-        
-        game:GetService("ReplicatedStorage"):WaitForChild("b"):FireServer(unpack(args))        
-    end
-end)
-B.Touched:Connect(function()
-    while wait() do
-        if PLR2.Name then
-            game.Workspace:FindFirstChild("Default").Glove.Size = Vector3.new(30,30,30)
-        end
-    end
-end)
-A.Text = "ForceHubX - Slap Battles : 🟢"
-wait(5)
-A:Destroy()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local UI = Instance.new("ScreenGui")
+local FHXmain = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local OnOffantiVoid = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+UI.Name = "UI"
+UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+FHXmain.Name = "FHXmain"
+FHXmain.Parent = UI
+FHXmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FHXmain.BackgroundTransparency = 0.700
+FHXmain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FHXmain.BorderSizePixel = 0
+FHXmain.Position = UDim2.new(0.386740327, 0, 0.235660881, 0)
+FHXmain.Size = UDim2.new(0, 369, 0, 423)
+
+TextLabel.Parent = FHXmain
+TextLabel.BackgroundColor3 = Color3.fromRGB(69, 255, 243)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 369, 0, 34)
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "ForceHubX - UI"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+UICorner.Parent = TextLabel
+
+UICorner_2.Parent = FHXmain
+
+OnOffantiVoid.Name = "On/OffantiVoid"
+OnOffantiVoid.Parent = FHXmain
+OnOffantiVoid.BackgroundColor3 = Color3.fromRGB(5, 153, 10)
+OnOffantiVoid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OnOffantiVoid.BorderSizePixel = 0
+OnOffantiVoid.Position = UDim2.new(0.0352303535, 0, 0.111111112, 0)
+OnOffantiVoid.Size = UDim2.new(0, 116, 0, 38)
+OnOffantiVoid.Font = Enum.Font.SourceSans
+OnOffantiVoid.Text = "Anti Void"
+OnOffantiVoid.TextColor3 = Color3.fromRGB(0, 0, 0)
+OnOffantiVoid.TextSize = 14.000
+
+UICorner_3.Parent = OnOffantiVoid
+
+-- Scripts:
+
+local function EHKAXY_fake_script() -- OnOffantiVoid.LocalScript 
+	local script = Instance.new('LocalScript', OnOffantiVoid)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local A = Instance.new("Message", workspace)
+		A.Text = "ForceHubX - Slap Battles : 🔴"
+		wait(5)
+		local B = Instance.new("Part", workspace.Arena["main island"])
+		B.Anchored = true
+		B.Position = Vector3.new(0,-8.5,0)
+		B.Size = Vector3.new(2048,1,2048)
+		B.Transparency = 0.5
+		B.Touched:Connect(function()
+			while wait() do
+				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
+			end
+		end)
+		A.Text = "ForceHubX - Slap Battles : 🟢"
+		wait(5)
+		A:Destroy()
+	end)
+end
+coroutine.wrap(EHKAXY_fake_script)()
