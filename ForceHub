@@ -8,6 +8,13 @@ B.Size = Vector3.new(2048,1,2048)
 B.Transparency = 0.5
 B.Touched:Connect(function()
     while wait() do
+    local args = {
+        [1] = game:GetService("Players"):WaitForChild("mebruhtoi").Character:FindFirstChild("Right Arm")
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("b"):FireServer(unpack(args))
+    end
+    while wait() do
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
     end
 end)
