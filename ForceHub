@@ -1,3 +1,5 @@
+local PLR2 = game.Players.LocalPlayer
+local PLR = game.Players.LocalPlayer.Name
 game.Players.LocalPlayer.PlayerAdded:Connect(function(player)
     error(player.Name .. "has joined the game")
 end)
@@ -11,13 +13,13 @@ B.Size = Vector3.new(2048,1,2048)
 B.Transparency = 0.5
 B.Touched:Connect(function()
     while wait() do
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
     end
 end)
 B.Touched:Connect(function()
     while wait() do
         local args = {
-            [1] = game:GetService("Players"):WaitForChild("mondarinette2009").Character:FindFirstChild("Right Arm")
+            [1] = game:GetService("Players"):WaitForChild(PLR).Character:FindFirstChild("Right Arm")
         }
         
         game:GetService("ReplicatedStorage"):WaitForChild("b"):FireServer(unpack(args))        
@@ -25,8 +27,8 @@ B.Touched:Connect(function()
 end)
 B.Touched:Connect(function()
     while wait() do
-        if game.Players.LocalPlayer:FindFirstChild("Default") then
-            game.Players.LocalPlayer.Default.Glove.Size = Vector3.new(30,30,30)
+        if PLR2.Name then
+            game.Workspace:FindFirstChild("Default").Glove.Size = Vector3.new(30,30,30)
         end
     end
 end)
