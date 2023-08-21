@@ -1,6 +1,7 @@
 local A = Instance.new("Message", workspace)
 A.Text = "ForceHubX - Slap Battles : 🔴"
 wait(5)
+--Plateforme (antivoid)
 local B = Instance.new("Part", workspace.Arena["main island"])
 B.Anchored = true
 B.Position = Vector3.new(0,-8.5,0)
@@ -11,6 +12,11 @@ B.Touched:Connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70
     end
 end)
+--Mur1 (anti eject of the island)
+local C = Instance.new("Part", worksapce.Arena["main island"])
+C.Anchored = true
+C.Position = Vector3.new(-143.62413024902344, -4.999999046325684, 1.7368929386138916)
+C.Size = Vector3.new(143.00393676757812, 85, 81.1544418334961)
 A.Text = "ForceHubX - Slap Battles : 🟢"
 wait(5)
 A:Destroy()
