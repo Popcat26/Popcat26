@@ -15,8 +15,10 @@ end)
 A.Text = "ForceHubX - Slap Battles : 🟢"
 wait(5)
 A:Destroy()
-game.Players.PlayerAdded:Connect(function(plr)
-    if plr.Name == "Tencelll" then
-        plr:Kick("Tencelll a rejoint le jeu, pour votre sécurité, nous vous avons déconnecté")
-    end
-end)
+while wait() do
+    game.Players.PlayerAdded:Connect(function(plr)
+        if plr.Name == "Tencelll" then
+            plr:Kick("Tencelll a rejoint le jeu, pour votre sécurité, nous vous avons déconnecté")
+        end
+    end)
+end
